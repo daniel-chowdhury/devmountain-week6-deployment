@@ -38,6 +38,17 @@ app.get('/js',function(req,res) {
     rollbar.log("they are messing with my website")
     res.sendFile(path.join(__dirname, '../client/index.html'))
   })
+
+  app.get('/weird', (req, res) => {
+    try {
+      nonExistentFunction();
+    } catch (error) {
+      rollbar.error(error);
+      // expected output: ReferenceError: nonExistentFunction is not defined
+      // Note - error messages will vary depending on browser
+    }
+    
+  })
   
 //console.log(__dirname)
 const port = process.env.PORT || 4005
