@@ -34,12 +34,12 @@ app.get('/js',function(req,res) {
     res.sendFile(path.join(__dirname, '../client/main.js'));
   });
 
-  // app.get('/rollb', (req, res) => {
-  //   rollbar.log("they hit our website again")
-  //   res.sendFile(path.join(__dirname, '../client/index.html'))
-  // })
+  app.get('/rollb', (req, res) => {
+    rollbar.log("they hit our website again")
+    res.sendFile(path.join(__dirname, '../client/index.html'))
+  })
   
-console.log(__dirname)
+//console.log(__dirname)
 const port = process.env.PORT || 4005
 // This will get the PORT variable from Heroku. However, if one isn't assigned (ex. when we are testing locally) it will use port 4005.
 
