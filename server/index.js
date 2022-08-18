@@ -12,7 +12,7 @@ var rollbar = new Rollbar({
   captureUncaught: true,
   captureUnhandledRejections: true,
 })
-rollbar.log("hello world jk")
+//rollbar.log("hello world jk")
 
 
 
@@ -35,7 +35,7 @@ app.get('/js',function(req,res) {
   });
 
   app.get('/rollb', (req, res) => {
-    rollbar.log("they hit our website again")
+    rollbar.log("they are messing with my website")
     res.sendFile(path.join(__dirname, '../client/index.html'))
   })
   
